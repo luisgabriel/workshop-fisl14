@@ -530,8 +530,45 @@ loop();
 
                         </script>
                     </section>
+                    <section>
+                        <h3>Typical game loop</h3>
+                        <pre><code data-trim>
+var FPS = 60;
+var TICK = 1000 / FPS;
+
+function mainLoop() {
+    processInput();
+    update(TICK);
+    draw(context);
+
+    setTimeout(mainLoop, TICK);
+};
+
+setTimeout(mainLoop, TICK);
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <h1>Hands on!</h1>
                 </section>
 
+                <section>
+                    <h2>Resources</h2>
+                    <p><a href="../html5games.zip">Download</a></p>
+                </section>
+
+                <section>
+                    <h2>Read more</h2>
+                    <p><a href="http://html5rocks.com/">HTML5 Rocks</a></p>
+                    <p><a href="http://docs.webplatform.org/">WebPlatform</a></p>
+                    <p>Mozilla developer network - MDN</p>
+                    <p><a href="http://diveintohtml5.info/">Dive into HTML5</a></p>
+                    <img src="images/js-the_good_parts.gif" />
+                </section>
+
+                <section>
+                    <h1>Thanks!</h1>
+                </section>
             </div>
 
         </div>
