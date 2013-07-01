@@ -1,77 +1,569 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-		<title>Workshop de Jogos em HTML5 @ FISL 14</title>
+        <title>HTML5 Games - Workshop @ FISL 14</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="reveal/css/reveal.min.css">
-		<link rel="stylesheet" href="reveal/css/theme/night.css" id="theme">
+        <link rel="stylesheet" href="reveal/css/reveal.min.css">
+        <link rel="stylesheet" href="reveal/css/theme/night.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
 
-	<body>
+    <body>
 
-		<div class="reveal">
+        <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Jogos em HTML5</h1>
-				</section>
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
 
-			</div>
+                <!-- Front slide -->
+                <section>
+                    <h1>HTML5 Games</h1>
+                    <p>Luís Gabriel Lima, Mailson Menezes</p>
+                    <p>openBossa @ <a href="http://www.indt.org/">INdT</a></p>
+                </section>
 
-		</div>
+                <!-- About -->
+                <section>
+                    <section>
+                        <h2>About us</h2>
+                        <p class="author">Luís Gabriel Lima</p>
+                        <p><a href="http://luisgabriel.me/">luisgabriel.me</a> / <a href="http://www.twitter.com/_luisgabriel/">@_luisgabriel</a></p>
+                    <p></p>
 
-		<script src="reveal/lib/js/head.min.js"></script>
-		<script src="reveal/js/reveal.min.js"></script>
+                        <p class="author">Mailson Menezes</p>
+                        <p><a href="http://blog.mailson.org/">blog.mailson.org</a> / <a href="http://www.twitter.com/omailson/">@omailson</a></p>
+                    </section>
+                    <section>
+                        <p>We're developing the HTML5 version of <a href="http://circus.indt.org">The Incredible Circus</a></p>
+                        <!-- colocar screen shots ao invés do vídeo -->
+                        <iframe src="http://player.vimeo.com/video/31198464" width="500" height="680" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                    </section>
+                </section>
 
-		<script>
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+                <!-- Intro -->
+                <section>
+                    <section>
+                        <img src="images/html5.svg" style="border: 0; background: none; box-shadow: none; width: 30%"/>
+                        <h3>
+                            <span class="fragment">HTML</span>
+                            <span class="fragment"> + CSS</span>
+                            <span class="fragment"> + JS</span>
+                        </h3>
+                    </section>
+                    <section>
+                        <h3>HTML defines structure</h3>
+                        <pre><code>&lt;div id="my-division"&gt;&lt;/div&gt;</code></pre>
+                    </section>
+                    <section>
+                        <h3>CSS defines presentation</h3>
+                        <pre><code>&lt;div id="my-division"&gt;&lt/div&gt;</code></pre>
+                        <pre><code>#my-division {
+    width: 200px;
+    height: 200px;
+    margin: 0px auto
+    background-color: grey;
+}</code></pre>
+                        <div id="my-division" style="width: 200px; height: 200px; background-color: grey; margin: 0px auto"></div>
+                    </section>
+                    <section>
+                        <h3>JS defines behavior</h3>
+                        <pre><code>&lt;div id="my-division"&gt;&lt/div&gt;</code></pre>
+                        <pre><code>#my-division {
+    width: 200px;
+    height: 200px;
+    margin: 0px auto
+    background-color: grey;
+}</code></pre>
+                        <pre><code>var mydiv = document.getElementById("my-division");
+var onclick = function () {
+    alert("clicked");
+};
+mydiv.addEventListener("click", onclick);</code></pre>
+                        <div id="my-division2" style="width: 200px; height: 200px; background-color: grey; margin: 0px auto"></div>
+                        <script>
+                            var mydiv = document.getElementById("my-division2");
+                            var onclick = function () { alert("clicked"); };
+                            mydiv.addEventListener("click", onclick);
+                        </script>
+                    </section>
+                    <section>
+                        <h3>This isn't new! What is this hype about?</h3>
+                    </section>
+                    <section>
+                        <h3>New stuff!</h3>
+                        <ul>
+                            <li><b>Audio</b> - &lt;audio&gt;, Web Audio</li>
+                            <li><b>Video</b> - &lt;video&gt;</li>
+                            <li><b>Drawing API</b> - Canvas 2D, WebGL</li>
+                            <li><b>Storage</b> - localStorage, IndexedDB</li>
+                            <li><b>Real-Time Communication</b> - WebSocket, WebRTC</li>
+                            <li><b>Multithreading</b> - WebWorkers</li>
+                        </ul>
+                    </section>
+                </section>
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                <!-- JS -->
+                <section>
+                    <section>
+                        <h2>JavaScript 101</h2>
+                        <p>JavaScript is a object-oriented, prototype-based programming language</p>
+                        <p>It's used as a browser programming language</p>
+                    </section>
+                    <section>
+                        <h3>Hello, world</h3>
+                        <pre><code>function hello(name) {
+    var message = "Hello, " + name;
+    console.log(message);
+}</code></pre>
+                        <aside class="notes">
+                            <p>how to declare a function</p>
+                            <p>declaring arguments</p>
+                            <p>use var to a local scope</p>
+                            <p>talk about the inspector</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h3>Function scope</h3>
+                        <pre><code>function example () {
+    if (true) {
+        var a = 6;
+    }
+    console.log(a);
+}</code></pre>
+                    </section>
+                    <section>
+                        <h3> OO JS - The easy way</h3>
+                        <pre><code>var Person = function (name) {
+    this.name = name;
+};
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
-					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-		</script>
+Person.prototype.sayHello = function () {
+    console.log("Hello, my name is " + this.name);
+};
 
-	</body>
+var p = new Person("John Doe");
+p.sayHello(); // Hello, my name is John Doe</code></pre>
+
+                        <aside class="notes">
+                            <p>Further reading: https://developer.mozilla.org/en-US/docs/JavaScript/Introduction_to_Object-Oriented_JavaScript</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h3>Inheritance</h3>
+                        <pre><code>var Student = function (name) {
+    Person.call(this, name);
+};
+
+Student.prototype.sayHello = function () {
+    console.log("Hello, my name is " + this.name + ". I'm a student.");
+};
+
+var s = new Student("Mart");
+s.sayHello(); // Hello, my name is Mart. I'm a student.
+console.log(s instanceof Person); // true</code></pre>
+                    </section>
+
+                    <section>
+                        <p>Further reading</p>
+                        <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Introduction_to_Object-Oriented_JavaScript">Introduction to object-oriented JavaScript</a>
+                        <a href="http://ejohn.org/blog/simple-javascript-inheritance/">Simple JavaScript inheritance</a>
+                    </section>
+                </section>
+
+                <!-- Canvas  -->
+                <section>
+                    <section>
+                        <h2>Canvas</h2>
+                    </section>
+                    <section>
+                        <h3>HTML definition</h3>
+                        <pre><code>&lt;canvas id="game" width="200" height="200"&gt;No canvas supported!&lt;/canvas&gt;</code></pre>
+                        <canvas id="canvas1" width="200" height="200" style="margin: 0px auto"></canvas>
+                        <script>
+                            var context = document.getElementById("canvas1").getContext("2d");
+                            context.fillStyle = "#FFFFFF";
+                            context.fillRect(0, 0, 200, 200);
+                        </script>
+                    </section>
+                    <section>
+                        <h3>Drawing primitives</h3>
+                        <pre><code class="language-javascript">var canvas = document.getElementById("game");
+var context = canvas.getContext("2d");
+context.fillStyle = "#c80000"
+context.fillRect(10, 10, 55, 50);
+
+context.fillStyle = "rgba(0, 0, 200, 0.5)"
+context.fillRect(30, 30, 55, 50);</pre></code>
+                        <canvas id="canvas2" width="200" height="200" style="margin: 0px auto"></canvas>
+                        <script>
+                            var context2 = document.getElementById("canvas2").getContext("2d");
+                            context2.fillStyle = "#FFFFFF";
+                            context2.fillRect(0, 0, 200, 200);
+
+                            context2.fillStyle = "#c80000"
+                            context2.fillRect(10, 10, 55, 50);
+
+                            context2.fillStyle = "rgba(0, 0, 200, 0.5)"
+                            context2.fillRect(30, 30, 55, 50);
+                        </script>
+                    </section>
+                    <section>
+                        <h4>There are plenty of functions on a <code>canvas2d</code> context</h4>
+                        <ul>
+                            <li>arc</li>
+                            <li>bezierCurve</li>
+                            <li>lineTo</li>
+                            <li>quadraticCurve</li>
+                            <li>stroke</li>
+                            <li>fillText</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Drawing images</h3>
+                        <pre><code class="language-javascript">var image = new Image();
+image.onload = function () {
+    context.drawImage(image, 30, 30);
+};
+image.src = "images/smurf.png"</pre></code>
+                        <canvas id="canvas3" width="200" height="200" style="margin: 0px auto"></canvas>
+                        <script>
+                            var context3 = document.getElementById("canvas3").getContext("2d");
+                            context3.fillStyle = "#FFFFFF";
+                            context3.fillRect(0, 0, 200, 200);
+
+                            var image = new Image();
+                            image.onload = function () {
+                                context3.drawImage(image, 30, 30);
+                            };
+                            image.src = "images/smurf.png"
+                        </script>
+                    </section>
+                    <section>
+                        <h3>Drawing a section of the image</h3>
+                        <pre><code>context.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh);</code></pre>
+                        <img src="images/drawImage.png" />
+                    </section>
+                    <section>
+                        <h3>Drawing sprite sheets</h3>
+                        <pre><code class="language-javascript">var image = new Image();
+image.onload = function () {
+    context.drawImage(image, 0, 0, 128, 128, 30, 30, 128, 128);
+};
+image.src = "images/smurfs_sheet.png"</pre></code>
+                        <div style="margin: 0px auto">
+                            <img src="images/smurfs_sheet.png" style="width: 40%"/>
+                            <canvas id="canvas4" width="200" height="200" style="margin-left: 50px; margin-bottom: 100px"></canvas>
+                        <div>
+                        <script>
+                            var context4 = document.getElementById("canvas4").getContext("2d");
+                            context4.fillStyle = "#FFFFFF";
+                            context4.fillRect(0, 0, 201, 201);
+
+                            var img = new Image();
+                            img.onload = function () {
+                                context4.drawImage(img, 0, 0, 128, 128, 30, 30, 128, 128);
+                            };
+                            img.src = "images/smurfs_sheet.png"
+                        </script>
+                    </section>
+                    <section>
+                        <h3>Going crazy with images</h3>
+                        <pre><code class="language-javascript">var image = new Image();
+image.onload = function () {
+    context.save();
+    context.translate(0, 80);
+    context.rotate(-45 * Math.PI / 180.0);
+    context.scale(3.0, 1.0);
+    context.drawImage(img2, -50, 30);
+    context.restore();
+};
+image.src = "images/smurf.png"</pre></code>
+                        <canvas id="canvas5" width="200" height="200" style="margin: 0px auto"></canvas>
+                        <script>
+                            var context5 = document.getElementById("canvas5").getContext("2d");
+                            context5.fillStyle = "#FFFFFF";
+                            context5.fillRect(0, 0, 200, 200);
+
+                            var img2 = new Image();
+                            img2.onload = function () {
+                                context5.save();
+                                context5.translate(0, 80);
+                                context5.rotate(-45 * Math.PI / 180.0);
+                                context5.scale(3.0, 1.0);
+                                context5.drawImage(img2, -50, 30);
+                                context5.restore();
+                            };
+                            img2.src = "images/smurf.png"
+                        </script>
+                    </section>
+                    <section>
+                        <p>Further reading</p>
+                        <p><a href="http://www.w3.org/TR/2dcontext2/">Specification</a></p>
+                        <p><a href="https://developer.mozilla.org/en-US/docs/HTML/Canvas/Tutorial">Canvas tutorial</a></p>
+                    </section>
+                </section>
+
+                <!-- Events -->
+                <section>
+                    <section>
+                        <h2>Events</h2>
+                    </section>
+                    <section>
+                        <h3>The basic</h3>
+                        <pre><code>var canvas = document.getElementById("game");
+function onclick (e) {
+    console.log("Click position: " + e.clientX + " " + e.clientY);
+}
+canvas.addEventListener("click", onclick);</code></pre>
+                    </section>
+                    <section>
+                        <h3>Using anonymous functions</h3>
+                        <pre><code>var canvas = document.getElementById("game");
+canvas.addEventListener("click", function (e) {
+    console.log("Click position: " + e.clientX + " " + e.clientY);
+});</code></pre>
+                    </section>
+                    <section>
+                        <h3>Other events</h3>
+                        <ul>
+                            <li>keydown, keypress, keyup</li>
+                            <li>mouseup, mousedown, mousemove, mouseout, mouseover...</li>
+                            <li>touchstart, touchend, touchmove, touchcancel...</li>
+                            <li>MSPointerUp, MSPointerDown,MSPointerMove...</li>
+                        </ul>
+                        <small style="margin-top: 20px">
+                            * Use libs like <a href="http://eightmedia.github.io/hammer.js/" target="_blank">Hammer.js</a>,
+                            <a href="https://github.com/jairajs89/Touchy.js" target="_blank">Touchy.js</a> and
+                            <a href="http://craig.is/killing/mice" target="_blank">Mousetrap</a> to keep yourself sane.
+                        </small>
+                    </section>
+                    <!--<section>
+                        <p>Further reading</p>
+                        <p><a href="http://www.w3.org/TR/2dcontext2/">Specification</a></p>
+                        <p><a href="https://developer.mozilla.org/en-US/docs/HTML/Canvas/Tutorial">Canvas tutorial</a></p>
+                    </section>-->
+                </section>
+
+                <!-- Game structure -->
+                <section>
+                    <section>
+                        <h2>Game Structure</h2>
+                    </section>
+                    <section>
+                        <h3>Sprite</h3>
+                        <pre><code data-trim>
+var Sprite = function (x, y, imageUrl) {
+    this.x = x || 0;
+    this.y = y || 0;
+
+    this.image = new Image();
+    this.image.src = imageUrl;
+};
+
+Sprite.prototype.update = function (delta) {
+    // do something
+};
+
+Sprite.prototype.draw = function (context) {
+    context.drawImage(this.image, this.x, this.y);
+};
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Example</h3>
+                        <pre><code data-trim>
+var context = document.getElementById("canvas").getContext("2d");
+var sprite = new Sprite(30, 30, "images/smurf.png");
+sprite.draw(context);
+                        </code></pre>
+                        <canvas id="canvas6" width="200" height="200" style="margin: 0px auto"></canvas>
+                        <script>
+                            var Sprite = function (x, y, imageUrl) {
+                                this.x = x || 0;
+                                this.y = y || 0;
+
+                                this.image = new Image();
+                                if (imageUrl)
+                                    this.image.src = imageUrl;
+                            };
+
+                            Sprite.prototype.update = function (delta) {
+                                // do something
+                            };
+
+                            Sprite.prototype.draw = function (context) {
+                                context.drawImage(this.image, this.x, this.y);
+                            };
+
+                            var context6 = document.getElementById("canvas6").getContext("2d");
+                            context6.fillStyle = "#FFFFFF"
+                            context6.fillRect(0, 0, 200, 200);
+
+                            var sprite = new Sprite(30, 30, "images/smurf.png");
+                            setTimeout(function() { sprite.draw(context6); }, 200);
+                        </script>
+                    </section>
+                    <section>
+                        <h3>AnimatedSprite</h3>
+                        <pre><code data-trim>
+var AnimatedSprite = function (x, y, imageUrl, width, height) {
+    Sprite.call(this, x, y, imageUrl, width, height);
+
+    this.currentFrame = 0;
+    this.animationTimer = 0;
+    this.frameTime = 120; // Change frame each 120ms
+    this.frameCount = 4;
+}
+
+AnimatedSprite.prototype = new Sprite();
+AnimatedSprite.prototype.constructor = AnimatedSprite;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>AnimatedSprite::update()</h3>
+                        <pre><code data-trim>
+AnimatedSprite.prototype.update = function (delta) {
+    this.animationTimer += delta;
+    var frameInc = Math.floor(this.animationTimer / this.frameTime);
+    this.animationTimer %= this.frameTime; // reset timer
+    this.currentFrame += frameInc;
+    this.currentFrame %= this.frameCount; // reset frame counter
+};
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>AnimatedSprite::draw()</h3>
+                        <pre><code data-trim>
+AnimatedSprite.prototype.draw = function (context) {
+    var frameX = this.width * this.currentFrame;
+    context.drawImage(this.image, // image
+        frameX, 0, this.width, this.height, // source
+        this.x, this.y, this.width, this.height // dest
+    );
+};
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Example</h3>
+                        <pre><code data-trim>
+var context = document.getElementById("canvas").getContext("2d");
+
+var sprite = new AnimatedSprite(30, 30, "images/smurfs_sheet.png", 128, 128);
+var loop = function () {
+    context.clearRect(0, 0, 200, 200);
+
+    asprite.update(60);
+    asprite.draw(context7);
+    setTimeout(loop, 60);
+};
+
+loop();
+                        </code></pre>
+                        <canvas id="canvas7" width="200" height="200" style="margin: 0px auto"></canvas>
+                        <script>
+                            var AnimatedSprite = function (x, y, imageUrl, width, height) {
+                                Sprite.call(this, x, y, imageUrl);
+
+                                this.width = width;
+                                this.height = height;
+
+                                this.currentFrame = 0;
+                                this.animationTimer = 0;
+                                this.frameTime = 120; // Change frame each 500ms
+                                this.frameCount = 4;
+                            }
+
+                            AnimatedSprite.prototype = new Sprite();
+                            AnimatedSprite.prototype.constructor = AnimatedSprite;
+
+                            AnimatedSprite.prototype.update = function (delta) {
+                                this.animationTimer += delta;
+                                var frameInc = Math.floor(this.animationTimer / this.frameTime);
+                                this.animationTimer %= this.frameTime; // reset timer
+                                this.currentFrame += frameInc;
+                                this.currentFrame %= this.frameCount; // reset frame counter
+                            };
+
+                            AnimatedSprite.prototype.draw = function (context) {
+                                var frameX = this.width * this.currentFrame;
+                                context.drawImage(this.image, // image
+                                    frameX, 0, this.width, this.height, // source
+                                    this.x, this.y, this.width, this.height // dest
+                                );
+                            };
+
+                            var context7 = document.getElementById("canvas7").getContext("2d");
+
+                            var asprite = new AnimatedSprite(30, 30, "images/smurfs_sheet.png", 128, 128);
+                            var f = function () {
+                                context7.clearRect(0, 0, 200, 200);
+                                context7.fillStyle = "#FFFFFF"
+                                context7.fillRect(0, 0, 200, 200);
+
+                                asprite.update(60);
+                                asprite.draw(context7);
+                                setTimeout(f, 60);
+                            };
+                            f();
+
+                        </script>
+                    </section>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="reveal/lib/js/head.min.js"></script>
+        <script src="reveal/js/reveal.min.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+        </script>
+
+    </body>
 </html>
